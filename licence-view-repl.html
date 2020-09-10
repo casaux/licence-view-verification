@@ -18,7 +18,9 @@
            var hashURL = window.location.hash;
            hashURL = hashURL.substring(1,hashURL.length);
 
-           //alert(hashURL+"/"+hashURL.search("verify"));
+
+
+           alert(hashURL+"/"+hashURL.search("verify")+"/"+hashURL.search("suspended"));
 
            if(hashURL.search("verify")!=-1){
              $("div.casa-view-only").css("display","none");
@@ -34,9 +36,22 @@
 
 
             if(hashURL.search("suspended")!=-1){
-              $("div.casa-status-suspended").css("display","block");
+                $("div.casa-status-suspended").css("display","block");
                 $("span.casa-status-suspended").css("display","inline");
             }
+
+
+            if(
+              (hashURL.search("suspended")!=-1 && hashURL.search("verify")!=-1)
+              ||
+                (hashURL.search("suspended")==-1 && hashURL.search("verify")==-1)
+              ||
+                (hashURL.search("suspended")==0 && hashURL.search("verify")==-1)
+            ){
+              $("div.casa-status-verify-only div.au-page-alerts--success").css("display","none");
+            }
+
+
 
            $("#apple").bind("click",function(){
                $("#loading").css("display","block");
@@ -140,8 +155,6 @@
             </div>
 
             <div class="casa-status-suspended">
-
-
                <div role="alert" class="au-body au-page-alerts au-page-alerts--error">
                  <div class="row">
                      <div class="col-xs-12 col-md-12 col-lg-9">
@@ -150,9 +163,18 @@
                      </div>
                  </div>
                </div>
-
            </div>
 
+           <div class="casa-status-verify-only">
+              <div role="alert" class="au-body au-page-alerts au-page-alerts--success">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-9">
+                        <h3>Licence verified</h3>
+                        <p>This licence is valid and in force</p>
+                    </div>
+                </div>
+              </div>
+          </div>
 
 
 			 <div class="casa-section">
