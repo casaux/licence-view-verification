@@ -27,6 +27,9 @@
     function loadHash(thisURL){
       var index = thisURL.lastIndexOf("/") + 1;
       var filename = thisURL.substr(index);
+
+      filename = filename.replace("%23", "#");
+
       window.location.hash = "#"+filename;
     }
 
