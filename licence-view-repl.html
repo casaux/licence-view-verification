@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>myCASA</title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="initial-scale=1">
+      <link rel="stylesheet" href="../mycasa-src-3.0/css/designsystem.min.css">
+      <link rel="stylesheet" href="../mycasa-src-3.0/css/casa.css">
+      <script type="text/javascript" src="../mycasa-src-3.0/js/designsystem.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.js"></script>
+      <script type="text/javascript">
+         /* page specific js */
+
+         $(document).ready(function() {
+
+           var hashURL = window.location.hash;
+           hashURL = hashURL.substring(1,hashURL.length);
+
+           //alert(hashURL+"/"+hashURL.search("verify"));
+
+           if(hashURL.search("verify")!=-1){
+             $("div.casa-view-only").css("display","none");
+             $("div.casa-verify-only").css("display","block");
+             $("span.casa-view-only").css("display","none");
+             $("span.casa-verify-only").css("display","inline");
+           } else {
+             $("div.casa-view-only").css("display","block");
+             $("div.casa-verify-only").css("display","none");
+             $("span.casa-view-only").css("display","inline");
+             $("span.casa-verify-only").css("display","none");
+           }
+
+
+            if(hashURL.search("suspended")!=-1){
+              $("div.casa-status-suspended").css("display","block");
+                $("span.casa-status-suspended").css("display","inline");
+            }
+
+           $("#apple").bind("click",function(){
+               $("#loading").css("display","block");
+
+               setInterval(function(){
+                 $("#loading").css("display","none");
+                 $("#wallet").css("display","block");
+               }, 5000);
+
+
+
+                //
+
+           });
+
+
+
+
+
+            $("#wallet").bind("click",function(){
+                $(this).css("display","none");
+            });
+
+         });
+      </script>
+      <style type="text/css">
+         /* page specific css */
+         #wallet{position:absolute;top:0;left:0;z-index:99999;display:none;bottom:0;right:0;background:#fff;}
+         #loading{background:rgba(0,0,0,0.2);position:absolute;top:0;left:0;z-index:99999;display:none;right:0;bottom:0}
+         #loading p{padding:1rem !important;background:#5c5c5c;color:#fff;font-weight:bold;width:250px;display:block; border-radius: 15px;text-align:center;margin:300px auto auto auto !important;}
+
+
+          .casa-status-suspended{display:none;}
+          .casa-status-verified{display:none;}
+
+          .casa-view-only nav, .casa-verify-only nav{margin-bottom:1rem}
+
+      </style>
+   </head>
+   <body class="live-demo au-body au-grid casa-dashboard">
+      <main class="au-grid">
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="logo au-body au-body--dark">
+                     <a href="../mycasa-dec-2020/index.html"><img src="../mycasa-src/img/CASALOGO-white-i.svg"></a>
+                  </div>
+                  </div>
+            </div>
+         </div>
+         <div class="body">
+
+<div id="loading">
+<p>Loading licence. Please wait...<br />
+  <img src="loader.png">
+</div>
+<div id="wallet"><img src="apple.png"></div>
+
+			<div class="banner">
+				<div class=container>
+					<div class="row">
+					 <div class="col-md-12">
+				This service is currently in beta, we encourage you to <a href="../flight-review/feedback.html">provide feedback</a>
+				</div>
+				</div>
+			</div>
+		</div>
+         <div class="container">
+           <div class="casa-view-only">
+               <nav class="au-breadcrumbs" aria-label="breadcrumb">
+                  <ul class="au-link-list au-link-list--inline">
+                     <li><a href="#">myCASA</a></li>
+                     <li>Remote pilot licence (<abbr title="Remote pilot licence">RePL</abbr>)</li>
+                  </ul>
+               </nav>
+            </div>
+            <div class="casa-verify-only">
+               <nav class="au-breadcrumbs" aria-label="breadcrumb">
+                  <ul class="au-link-list au-link-list--inline">
+                     <li><a href="#">myCASA</a></li>
+                     <li><a href="#">Verify licence</a></li>
+                     <li>Licence details</li>
+                  </ul>
+               </nav>
+            </div>
+
+            <div class="casa-status-suspended">
+
+
+               <div role="alert" class="au-body au-page-alerts au-page-alerts--error">
+                 <div class="row">
+                     <div class="col-xs-12 col-md-12 col-lg-9">
+                         <h3>Please review licence details</h3>
+                         <p>This licence has suspensions or cancellations against it. Please <a href="https://www.casa.gov.au/about-us/contact-us">contact CASA</a> for more information.</p>
+                     </div>
+                 </div>
+               </div>
+
+           </div>
+
+
+
+			 <div class="casa-section">
+               <header class="au-header" role="banner">
+                  <h1 class="break desktop au-header-heading">Remote pilot licence (<abbr title="Remote pilot licence">RePL</abbr>) <span class="badge badge-expired casa-status-suspended">Suspended</span></h1>
+				   				   <a class="au-direction-link" href="javascript:history.back()">
+					<span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back
+					</a>
+               </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               <div class="au-form-group">
+
+                         </div>
+<div class="casa-view-only">
+               <div class="au-form-group casa-mobile-only">
+
+<div id="apple"><a href="#"><img src="Add_to_Apple_Wallet_rgb_US-UK.svg"></a><br></div>
+<!--<a href="#"><img src="Save to Google Pay - English (Dark).svg"></a>-->
+
+</div>
+</div>
+
+<div class="au-form-group">
+             <div class="au-table__wrapper">
+               <table class="au-table au-table--striped">
+                     <caption class="au-table__caption">Licence holder details</caption>
+                     <thead class="au-table__head">
+                         <tr class="au-table__row">
+                             <th scope="col" class="au-table__header au-table__header--width-25">Name</th>
+                             <th scope="col" class="au-table__header" colspan="2">Katherine Vivianne Charlotte van der Schinklehaven</th>
+                         </tr>
+                     </thead>
+                     <tbody class="au-table__body">
+                         <tr class="au-table__row">
+                             <td class="au-table__cell">ARN and licence number</td>
+                             <td class="au-table__cell">7654321</td>
+                               <td class="au-table__cell"> </td>
+                         </tr>
+                         <tr class="au-table__row">
+                             <td class="au-table__cell">Date of birth</td>
+                             <td class="au-table__cell">27/11/2000</td>
+                             <td class="au-table__cell"> </td>
+                         </tr>
+                         <tr class="au-table__row">
+                             <td class="au-table__cell">Nationality</td>
+                             <td class="au-table__cell">Australian</td>
+                             <td class="au-table__cell"> </td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+             </div>
+
+<div class="au-form-group">
+<div class="au-table__wrapper">
+    <table class="au-table au-table--striped">
+        <caption class="au-table__caption"><abbr title="Remotely piloted aircraft">RPA</abbr> category and type</caption>
+        <thead class="au-table__head">
+            <tr class="au-table__row">
+                <th scope="col" class="au-table__header au-table__header--width-33"><abbr title="Remotely piloted aircraft">RPA</abbr> category</th>
+                <th scope="col" class="au-table__header au-table__header--width-33">Weight class / capacity</th>
+                <th scope="col" class="au-table__header au-table__header--width-33 au-table__header--numeric">Granted date</th>
+            </tr>
+        </thead>
+        <tbody class="au-table__body">
+          <tr class="au-table__row">
+              <td class="au-table__cell">Powered lift</td>
+              <td class="au-table__cell">Up to 7kg</td>
+              <td class="au-table__cell  au-table__cell--numeric">12/06/2019</td>
+          </tr>
+            <tr class="au-table__row">
+                <td class="au-table__cell">Multi-rotor</td>
+                <td class="au-table__cell">Up to 25kg</td>
+                <td class="au-table__cell  au-table__cell--numeric">24/03/2019</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+				<div class="au-form-group">
+                <a class="au-direction-link" href="javascript:history.back()">
+					<span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Return to myCASA
+					</a>
+
+
+				</div>
+
+
+            </div>
+
+
+            </div>
+         </div>
+          <div class="footer">
+
+            <div class="footer-wrapper">
+               <iframe src="../mycasa-src/footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+            </div>
+         </div>
+      </main>
+   </body>
+</html>
