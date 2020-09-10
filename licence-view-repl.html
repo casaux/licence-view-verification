@@ -74,6 +74,22 @@
 
           .casa-view-only nav, .casa-verify-only nav{margin-bottom:1rem}
 
+
+          #loading{background:rgba(0,0,0,0.2);position:absolute;top:0;left:0;z-index:99999;display:none;right:0;bottom:0}
+       #loading p{font-size:1.3rem;line-height:1.5rem;padding:1rem !important;background:#5c5c5c;color:#fff;font-weight:bold;width:250px;display:block; border-radius: 5px;text-align:center;margin:300px auto auto auto !important;}
+
+       #loading img{animation: rotation 2s infinite linear;}
+
+       @keyframes rotation {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(359deg);
+          }
+        }
+
+
       </style>
    </head>
    <body class="live-demo au-body au-grid casa-dashboard">
@@ -165,9 +181,8 @@
                          </div>
 <div class="casa-view-only">
                <div class="au-form-group casa-mobile-only">
+                 <a class="au-btn" href="#">Download digital licence for iPhone</a>
 
-<div id="apple"><a href="#"><img src="Add_to_Apple_Wallet_rgb_US-UK.svg"></a><br></div>
-<!--<a href="#"><img src="Save to Google Pay - English (Dark).svg"></a>-->
 
 </div>
 </div>
