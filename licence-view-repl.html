@@ -53,35 +53,37 @@
 
 
 
-           $("#apple").bind("click",function(){
-               $("#loading").css("display","block");
-
-               setInterval(function(){
-                 $("#loading").css("display","none");
-                 $("#wallet").css("display","block");
-               }, 5000);
 
 
 
-                //
-
+           $("#download").bind("click",function(){
+               $(".casa-modal").css("display","block");
            });
 
+           $(".casa-modal-close").bind("click",function(){
+               $(".casa-modal").css("display","none");
+           });
+
+            $("#load-licence").bind("click",function(){
+                $("#loading").css("display","block");
 
 
+                setInterval(function(){
+                  $("#licence").css("display","block");
+                  $("#loader").css("display","none");
+                }, 1000);
 
-
-            $("#wallet").bind("click",function(){
-                $(this).css("display","none");
             });
+
+
+
+
 
          });
       </script>
       <style type="text/css">
          /* page specific css */
          #wallet{position:absolute;top:0;left:0;z-index:99999;display:none;bottom:0;right:0;background:#fff;}
-         #loading{background:rgba(0,0,0,0.2);position:absolute;top:0;left:0;z-index:99999;display:none;right:0;bottom:0}
-         #loading p{padding:1rem !important;background:#5c5c5c;color:#fff;font-weight:bold;width:250px;display:block; border-radius: 15px;text-align:center;margin:300px auto auto auto !important;}
 
 
           .casa-status-suspended{display:none;}
@@ -90,10 +92,12 @@
           .casa-view-only nav, .casa-verify-only nav{margin-bottom:1rem}
 
 
-          #loading{background:rgba(0,0,0,0.2);position:absolute;top:0;left:0;z-index:99999;display:none;right:0;bottom:0}
+          #loading{background:rgba(0,0,0,0.2);position:absolute;top:0;left:0;z-index:9999999999;display:none;right:0;bottom:0}
        #loading p{font-size:1.3rem;line-height:1.5rem;padding:1rem !important;background:#5c5c5c;color:#fff;font-weight:bold;width:250px;display:block; border-radius: 5px;text-align:center;margin:300px auto auto auto !important;}
 
-       #loading img{animation: rotation 2s infinite linear;}
+       #loading #loader{animation: rotation 2s infinite linear;}
+
+       #licence {display:none;position:absolute;top:0;right:0;bottom:0;left:0;z-index:9999999999999;background: #f2f2f7;}
 
        @keyframes rotation {
           from {
@@ -105,9 +109,11 @@
         }
 
 
+        .casa-modal{display:none;}
+
       </style>
    </head>
-   <body class="live-demo au-body au-grid casa-dashboard">
+   <body class="live-demo au-body au-grid">
       <main class="au-grid">
          <div class="header">
             <div class="container">
@@ -120,11 +126,62 @@
          </div>
          <div class="body">
 
-<div id="loading">
-<p>Loading licence. Please wait...<br />
-  <img src="loader.png">
-</div>
-<div id="wallet"><img src="apple.png"></div>
+
+
+           <div class="casa-modal">
+              		   <div class="casa-modal-inner">
+              			   <div class="casa-modal-header">
+              				  <h3>Digital view of your flight crew licence</h3>
+
+              				   <div class="casa-modal-close"><a href="#"><span>Close</span></a></div>
+
+
+              			   </div>
+              			   				<div class="casa-modal-body">
+
+                               <p>There are two parts of the digital view of your flight crew licence. Note that this is only a view of your flight crew licence and you may not exercise the privileges of your flight crew licence unless you are in possession of your paper flight crew licence document.</p>
+
+                               <p>The first part is what you see inside your Apple Wallet on your iPhone and contains a QR code that allows someone to verify and see the details of your licence as they appear on the CASA system.</p>
+
+                               <p>The second part is all the details of your flight crew licence as appears on your paper licence. To access this view, follow the instructions below.</p>
+
+                               <p><strong>Tap the 3 dots at the top right of your screen</strong></p>
+
+           <p><img src="wallet1-repl.png" /></p>
+
+             <p><strong>Scroll down through the licence view to see all the details of your licence.</strong></p>
+
+           <p><img src="wallet2-repl.png" /></p>
+
+           <p>You can add the digital view of your flight crew licence to your Apple Wallet below. </p>
+
+           <p class="au-callout"><strong>
+             Note that by adding the digital view of your flight crew licence to your Apple Wallet, you are consenting to your details being verified through the QR code on the front of the digital view to anyone you show the digital view to.
+
+
+           </strong>
+
+           </p>
+           <br />
+           <a href="#" id="load-licence"><img src="Add_to_Apple_Wallet_rgb_US-UK.svg" style="width:100%"></a>
+
+
+                             </div>
+              			 </div>
+              	   </div>
+
+            <div id="loading">
+            <p>Loading licence.<br /> Please wait...<br />
+            <img src="loader.png" id="loader">
+            </div>
+
+            <div id="licence">
+              <img src="RePL.png">
+            </div>
+
+
+
+
 
 			<div class="banner">
 				<div class=container>
@@ -203,7 +260,7 @@
                          </div>
 <div class="casa-view-only">
                <div class="au-form-group casa-mobile-only">
-                 <a class="au-btn" href="#">Download digital licence for iPhone</a>
+                 <a class="au-btn" href="#" id="download">Download digital licence for iPhone</a>
 
 
 </div>

@@ -21,6 +21,10 @@
 
 
     if(hashURL.length>0){
+
+      hashURL = hashURL.replace("%23", "#");
+      hashURL = hashURL.replace("%7C", "|");
+
       document.getElementById('phone').src=hashURL;
     }
 
@@ -29,8 +33,14 @@
       var filename = thisURL.substr(index);
 
       filename = filename.replace("%23", "#");
+      filename = filename.replace("%7C", "|");
+
+
 
       window.location.hash = "#"+filename;
+
+
+
     }
 
 
