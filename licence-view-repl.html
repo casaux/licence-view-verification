@@ -64,6 +64,15 @@
                $(".casa-modal").css("display","none");
            });
 
+           $("#show-back").bind("click",function(){
+               $(this).addClass("show-back-full");
+           });
+
+           $("#show-back img").bind("click",function(){
+               $("#show-back").removeClass("show-back-full");
+               $("#show-back img").css("display","none");
+           });
+
             $("#load-licence").bind("click",function(){
                 $("#loading").css("display","block");
 
@@ -98,6 +107,13 @@
        #loading #loader{animation: rotation 2s infinite linear;}
 
        #licence {display:none;position:absolute;top:0;right:0;bottom:0;left:0;z-index:9999999999999;background: #f2f2f7;}
+       #load-licence{margin-bottom:2000px;display:block;}
+
+       #show-back{position: absolute;top:0;right:0;width:50px;height:50px;cursor:pointer;}
+       #show-back img{display:none;}
+
+       #show-back.show-back-full{cursor:default;left:0;top:0;width:auto;height:auto;}
+       #show-back.show-back-full img{display:block;}
 
        @keyframes rotation {
           from {
@@ -174,6 +190,7 @@
             </div>
 
             <div id="licence">
+              <div id="show-back"><img src="RePL-back@2x.png"></div>
               <img src="RePL.png">
             </div>
 
