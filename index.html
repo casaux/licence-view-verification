@@ -13,7 +13,7 @@
 </head>
   <body>
 
-    <iframe src="verify.html" onLoad="loadHash(this.contentWindow.location.href)" id="phone" width="380" height="700"></iframe>
+    <iframe src="../mycasa-dec-2020/dashboard-ind.html" onLoad="loadHash(this.contentWindow.location.href)" id="phone" width="380" height="700"></iframe>
 
     <script>
     var hashURL = window.location.hash;
@@ -35,13 +35,14 @@
       filename = filename.replace("%23", "#");
       filename = filename.replace("%7C", "|");
 
+      var hashURL = window.location.hash;
+      hashURL = hashURL.substring(1,hashURL.length);
 
-
-      window.location.hash = "#"+filename;
-
-
-
+      if(hashURL.length>0){
+          window.location.hash = "#"+filename;
+      }
     }
+
 
 
     </script>
